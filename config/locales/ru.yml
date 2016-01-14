@@ -3,14 +3,19 @@
 
 ru:
   hello: "Hello world"
-  posts: "Новости"
+  news_items: "Новости"
   admin_posts:
     add_news: "Добавить новость"
     edit_news: "Редактирование новости"
 
   activerecord:
     attributes:
-      spree/post:
+      spree/news:
         title: Заголовок
         description: Описание
         published: Опубликовано
+
+  spree:
+    admin:
+      tab:
+        news_index: Нов. лента

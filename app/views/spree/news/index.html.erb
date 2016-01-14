@@ -1,0 +1,17 @@
+<div data-hook="news">
+  <h1>
+    <%= t("news_items")  %>
+  </h1>
+  <ul>
+    <% @news_items.each do |news_item| %>
+      <li>
+        <div>
+          <h6>
+            <%= l(news_item.created_at, format: "%d %B %Y") %>
+          </h6>
+          <%= link_to news_item.title, news_item %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<h1>
+  <%= "Showing News Post: #{@news_item.title}" %>
+</h1>
+<p></p>
+<h4>
+  <%= "Title: #{@news_item.title}" %>
+</h4>
+<h4>
+  <%= t(:description) %>
+</h4>
+<%= @news_item.description %>
+<p></p>
+<%= link_to_edit @news_item, :class => 'edit_slide' %>
+<%= t(:or) %>
+<%= link_to t(:back), collection_url %>

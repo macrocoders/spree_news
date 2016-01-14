@@ -1,16 +1,16 @@
-<% if Spree::Post.published.any? %>
+<% if Spree::News.published.any? %>
   <div class="news-ticker">
     <h3>Latest News</h3>
     <p></p>
     <div id="news-container">
       <ul>
-        <% Spree::Post.published.each do |post| %>
+        <% Spree::News.published.each do |news_item| %>
           <li>
             <div>
               <h6>
-                <%= post.created_at.strftime("%B %d, %Y") %>
+                <%= news_item.created_at.strftime("%B %d, %Y") %>
               </h6>
-              <%= post.description %>
+              <%= news_item.description %>
             </div>
           </li>
         <% end %>

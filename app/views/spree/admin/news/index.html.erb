@@ -1,0 +1,45 @@
+<h1>
+  <%= t(:news_items) %>
+</h1>
+<div class="new-post">
+  <%= button_link_to t("admin_posts.add_news"), new_object_url, :icon => 'add', :id => 'admin_new_post_link' %>
+</div>
+<table class="index" id="listing_posts">
+  <colgroup>
+     <col style="width: 30%;">
+     <col style="width: 50%;">
+     <col style="width: 10%;">
+     <col style="width: 10%;">
+  </colgroup>
+  <thead>
+    <th>
+      <%= Spree::News.human_attribute_name(:title) %>
+    </th>
+    <th>
+      <%= Spree::News.human_attribute_name(:description) %>
+    </th>
+    <th>
+      <%= Spree::News.human_attribute_name(:published) %>
+    </th>
+    <th class='actions'></th>
+  </thead>
+  <tbody>
+    <% @news_items.each do |news_item| %>
+      <tr id="<%= spree_dom_id news_item %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
+        <td>
+          <%= link_to news_item.title, object_url(news_item) %>
+        </td>
+        <td>
+          <%= news_item.description %>
+        </td>
+        <td>
+          <%= check_box_tag 'published', nil, news_item.published, disabled: true %>
+        </td>
+        <td class='actions'>
+          <%= link_to_edit news_item, no_text: true %>
+          <%= link_to_delete news_item, no_text: true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

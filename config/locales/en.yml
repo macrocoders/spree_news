@@ -3,7 +3,7 @@
 
 en:
   hello: "Hello world"
-  posts: "News"
+  news_items: "News"
   admin_posts:
     add_news: "Add news"
     edit_news: "Edit news"
@@ -14,3 +14,8 @@ en:
         title: Header
         description: Description
         published: Published
+
+  spree:
+    admin:
+      tab:
+        news_index: Ticker news  

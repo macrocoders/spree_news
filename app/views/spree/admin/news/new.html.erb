@@ -2,7 +2,7 @@
 <h1>
   <%= t("admin_posts.add_news") %>
 </h1>
-<%= form_for [:admin, @post] do |f| %>
+<%= form_for [:admin, @news_item] do |f| %>
   <%= render :partial => 'form', :locals => {:f => f} %>
   <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
 <% end %>
