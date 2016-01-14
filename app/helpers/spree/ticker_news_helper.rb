@@ -2,6 +2,7 @@ module Spree
   module TickerNewsHelper
     def insert_ticker_news(params={})
       params[:class] ||= 'news-ticker'
+      params[:ticker_id] ||= 'news-container'
       news_items = Spree::News.published
       return '' if news_items.empty?
       content_tag :div, class: params[:class] do

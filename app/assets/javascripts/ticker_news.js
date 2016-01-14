@@ -4,6 +4,7 @@ $(function(){
     pause: 5000,
     animation: 'fade',
     mousePause: true,
-    showItems: 1
+    showItems: 1,
+    padding: 5
   });
 });
